@@ -3,116 +3,228 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MARABU BOOKS</title>
+  <title>MARABU BOOKS — Stories Passed Through Generations</title>
+  <meta
+    name="description"
+    content="MARABU BOOKS — Stories, mysteries and adventures created to spark imagination across generations."
+  >
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <nav>
-    <div class="logo">MARABU BOOKS</div>
-
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-mark">✦</span>
+      <span>MARABU BOOKS</span>
+    </a>
     <a
       href="https://www.youtube.com/@Marabu-books-studio"
       target="_blank"
-      class="subscribe"
+      rel="noopener noreferrer"
+      class="subscribe-btn"
     >
       SUBSCRIBE
     </a>
   </nav>
-
-  <section class="hero">
-
-    <div class="stars"></div>
-
-    <div class="hero-content">
-      <p class="eyebrow">STORIES PASSED THROUGH GENERATIONS</p>
-
-      <h1>MARABU<br><span>BOOKS</span></h1>
-
-      <p class="hero-text">
-        Stories that spark imagination,
-        curiosity and wonder — for every generation.
+  <!-- ================= HERO ================= -->
+  <main>
+    <section class="hero">
+      <!-- Background atmosphere -->
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="stars"></div>
+      <!-- Floating decorative elements -->
+      <div class="floating-symbol symbol-one">✦</div>
+      <div class="floating-symbol symbol-two">✧</div>
+      <div class="floating-symbol symbol-three">✦</div>
+      <div class="floating-symbol symbol-four">·</div>
+      <div class="hero-content reveal">
+        <p class="hero-kicker">
+          STORIES PASSED THROUGH GENERATIONS
+        </p>
+        <h1>
+          MARABU
+          <span>BOOKS</span>
+        </h1>
+        <div class="hero-line"></div>
+        <p class="hero-description">
+          Stories of wonder, mystery and imagination —
+          created to travel from one generation to the next.
+        </p>
+        <a href="#books" class="hero-button">
+          ENTER THE STORY WORLD
+          <span>↓</span>
+        </a>
+      </div>
+      <!-- Moon -->
+      <div class="moon-orbit">
+        <div class="moon">
+          <span>☾</span>
+        </div>
+        <div class="orbit-dot"></div>
+      </div>
+      <!-- Bottom story hint -->
+      <div class="scroll-hint">
+        <span></span>
+        SCROLL TO DISCOVER
+      </div>
+    </section>
+    <!-- ================= MARABU INTRO ================= -->
+    <section class="intro reveal">
+      <p class="section-label">THE MARABU IDEA</p>
+      <h2>
+        Every story leaves<br>
+        something behind.
+      </h2>
+      <p class="intro-text">
+        A moment of wonder. A question. A secret.
+        Something worth remembering — and passing on.
       </p>
-
-      <a href="#books" class="explore">
-        EXPLORE THE STORIES ↓
+      <div class="heritage-line">
+        <span>✦</span>
+        <div></div>
+        <span>✦</span>
+      </div>
+    </section>
+    <!-- ================= BOOKS ================= -->
+    <section id="books" class="books-section">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-label">
+            THE MARABU STORY UNIVERSE
+          </p>
+          <h2>
+            Stories waiting<br>
+            to be discovered.
+          </h2>
+        </div>
+        <p class="heading-note">
+          New worlds.<br>
+          Hidden secrets.<br>
+          Endless imagination.
+        </p>
+      </div>
+      <div class="book-grid">
+        <!-- BOOK 1 -->
+        <article class="book-card released reveal">
+          <div class="book-visual garden-book">
+            <div class="mist mist-one"></div>
+            <div class="mist mist-two"></div>
+            <div class="garden-moon">☾</div>
+            <div class="clock-container">
+              <span class="clock-small">
+                THE GARDEN
+              </span>
+              <strong>12:07</strong>
+              <span class="clock-small">
+                AM
+              </span>
+            </div>
+            <div class="garden-vine vine-left">❧</div>
+            <div class="garden-vine vine-right">❧</div>
+            <div class="book-stars">
+              ✦　·　✧　·　✦
+            </div>
+          </div>
+          <div class="book-details">
+            <div class="book-status">
+              <span class="status-dot"></span>
+              RELEASED
+            </div>
+            <p class="book-number">
+              MARABU MYSTERY UNIVERSE · BOOK ONE
+            </p>
+            <h3>
+              THE GARDEN<br>
+              AT 12:07 AM
+            </h3>
+            <p class="book-description">
+              A mysterious garden. A hidden secret.
+              One strange night that changes everything.
+            </p>
+            <a href="#" class="book-button">
+              CLICK TO BUY
+              <span>→</span>
+            </a>
+          </div>
+        </article>
+        <!-- BOOK 2 -->
+        <article class="book-card coming reveal">
+          <div class="book-visual second-book">
+            <div class="future-ring"></div>
+            <div class="future-ring ring-two"></div>
+            <div class="future-symbol">
+              ✦
+            </div>
+            <p>
+              THE STORY<br>
+              CONTINUES
+            </p>
+            <span class="mystery-question">
+              ?
+            </span>
+          </div>
+          <div class="book-details">
+            <div class="book-status coming-status">
+              COMING SOON
+            </div>
+            <p class="book-number">
+              MARABU MYSTERY UNIVERSE · BOOK TWO
+            </p>
+            <h3>
+              THE GARDEN<br>
+              PART - 2
+            </h3>
+            <p class="book-description">
+              The mystery continues.
+              Another secret is waiting beyond the garden.
+            </p>
+            <button class="book-button disabled" disabled>
+              COMING SOON
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- ================= CLOSING ================= -->
+    <section class="closing reveal">
+      <div class="closing-stars">
+        ✦　✧　✦
+      </div>
+      <p class="section-label">
+        MARABU BOOKS
+      </p>
+      <h2>
+        The next story<br>
+        could begin here.
+      </h2>
+      <p>
+        Follow MARABU BOOKS for new stories,
+        worlds and adventures.
+      </p>
+      <a
+        href="https://www.youtube.com/@Marabu-books-studio"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="closing-button"
+      >
+        JOIN THE STORY
       </a>
-    </div>
-
-    <div class="moon">☾</div>
-    <div class="spark spark1">✦</div>
-    <div class="spark spark2">✧</div>
-    <div class="spark spark3">✦</div>
-
-  </section>
-
-
-  <section id="books" class="books">
-
-    <p class="section-label">THE MARABU STORY UNIVERSE</p>
-
-    <h2>Stories waiting to be discovered.</h2>
-
-    <div class="book-grid">
-
-      <article class="book released">
-
-        <div class="book-art">
-          <div class="clock">12:07</div>
-          <div class="vine">❧</div>
-        </div>
-
-        <div class="book-info">
-          <span class="status">RELEASED</span>
-
-          <h3>THE GARDEN<br>AT 12:07 AM</h3>
-
-          <p>
-            A mysterious garden. A hidden secret.
-            One night that changes everything.
-          </p>
-
-          <a href="#" class="buy">
-            CLICK TO BUY →
-          </a>
-        </div>
-
-      </article>
-
-
-      <article class="book coming">
-
-        <div class="book-art second">
-          <div class="coming-symbol">✦</div>
-        </div>
-
-        <div class="book-info">
-          <span class="status soon">COMING SOON</span>
-
-          <h3>THE GARDEN<br>PART - 2</h3>
-
-          <p>
-            The mystery continues...
-            The next chapter is waiting.
-          </p>
-
-          <button disabled>
-            COMING SOON
-          </button>
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
+    </section>
+  </main>
+  <!-- ================= FOOTER ================= -->
   <footer>
-    <div class="logo">MARABU BOOKS</div>
-    <p>Stories that stay with you.</p>
+    <div class="footer-brand">
+      <span>✦</span>
+      MARABU BOOKS
+    </div>
+    <p>
+      Stories that stay with you.
+    </p>
+    <small>
+      © 2026 MARABU BOOKS. All rights reserved.
+    </small>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>
