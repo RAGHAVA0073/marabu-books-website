@@ -1,142 +1,112 @@
 /* =========================================
-   FINAL CTA + BUTTON ANIMATIONS
+   MARABU BOOKS — SCRIPT.JS
    ========================================= */
 
-/* Top navigation spacing */
-.navbar {
-  padding-left: 6%;
-  padding-right: 6%;
-}
+document.addEventListener("DOMContentLoaded", () => {
 
-.navbar .subscribe-btn {
-  margin-left: 24px;
-}
+  /* =========================================
+     REVEAL SECTIONS
+     ========================================= */
 
-/* Hero "ENTER THE STORY WORLD" */
-.hero a {
-  display: inline-block;
-  position: relative;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  animation: heroButtonFloat 2.8s ease-in-out infinite;
-}
+  const revealElements = document.querySelectorAll(".reveal");
 
-.hero a:hover {
-  transform: translateY(-4px) scale(1.04);
-  text-shadow: 0 0 18px rgba(255, 215, 120, 0.8);
-}
+  // Make all content visible even if IntersectionObserver
+  // is unavailable or animation fails.
+  revealElements.forEach((element) => {
+    element.classList.add("visible");
+  });
 
-/* Click to Buy */
-a[href="#"] {
-  display: inline-block;
-  position: relative;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  animation: buyButtonGlow 2.2s ease-in-out infinite;
-}
+  /* =========================================
+     INTERSECTION OBSERVER
+     ========================================= */
 
-a[href="#"]:hover {
-  transform: translateY(-4px) scale(1.05);
-  text-shadow: 0 0 18px rgba(255, 215, 120, 0.9);
-}
+  if ("IntersectionObserver" in window) {
 
-/* Coming Soon */
-button:disabled,
-.coming-soon,
-.disabled {
-  animation: comingSoonGlow 2.5s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
+    const observer = new IntersectionObserver(
+      (entries) => {
 
-button:disabled:hover,
-.coming-soon:hover,
-.disabled:hover {
-  transform: translateY(-3px);
-}
+        entries.forEach((entry) => {
 
-/* Follow MARABU BOOKS */
-a[href*="youtube"] {
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
 
-section a[href*="youtube"]:not(.subscribe-btn) {
-  display: inline-block;
-  animation: followGlow 2.4s ease-in-out infinite;
-}
+        });
 
-section a[href*="youtube"]:hover {
-  transform: translateY(-4px) scale(1.04);
-  text-shadow: 0 0 18px rgba(255, 215, 120, 0.8);
-}
+      },
+      {
+        threshold: 0.08
+      }
+    );
 
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
 
-/* =========================================
-   ANIMATION KEYFRAMES
-   ========================================= */
-
-@keyframes heroButtonFloat {
-  0%, 100% {
-    transform: translateY(0);
   }
 
-  50% {
-    transform: translateY(-5px);
-  }
-}
+  /* =========================================
+     SMOOTH SCROLL
+     ========================================= */
 
-@keyframes buyButtonGlow {
-  0%, 100% {
-    transform: translateY(0);
-    filter: brightness(1);
-  }
+  const storyButton = document.querySelector('a[href="#books"]');
 
-  50% {
-    transform: translateY(-4px);
-    filter: brightness(1.25);
-  }
-}
+  if (storyButton) {
 
-@keyframes comingSoonGlow {
-  0%, 100% {
-    opacity: 0.85;
-    filter: brightness(1);
-  }
+    storyButton.addEventListener("click", (event) => {
 
-  50% {
-    opacity: 1;
-    filter: brightness(1.25);
-  }
-}
+      const target = document.querySelector("#books");
 
-@keyframes followGlow {
-  0%, 100% {
-    transform: translateY(0);
-    filter: brightness(1);
+      if (target) {
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+
+    });
+
   }
 
-  50% {
-    transform: translateY(-4px);
-    filter: brightness(1.2);
-  }
-}
+  /* =========================================
+     BOOK IMAGE FALLBACK
+     ========================================= */
 
+  const bookImages = document.querySelectorAll(".book-cover");
 
-/* =========================================
-   MOBILE
-   ========================================= */
+  bookImages.forEach((image) => {
 
-@media (max-width: 800px) {
+    image.addEventListener("error", () => {
+      image.style.display = "none";
+    });
 
-  .navbar {
-    padding-left: 5%;
-    padding-right: 5%;
-  }
+  });
 
-  .navbar .subscribe-btn {
-    margin-left: 12px;
-  }
+  /* =========================================
+     BUTTON ANIMATIONS
+     ========================================= */
 
-  .hero a,
-  a[href="#"],
-  section a[href*="youtube"] {
-    animation-duration: 3s;
-  }
-}
+  const heroLinks = document.querySelectorAll(".hero a");
+
+  heroLinks.forEach((link) => {
+
+    link.addEventListener("mouseenter", () => {
+      link.style.transform = "translateY(-4px) scale(1.04)";
+    });
+
+    link.addEventListener("mouseleave", () => {
+      link.style.transform = "";
+    });
+
+  });
+
+  /* =========================================
+     PAGE READY
+     ========================================= */
+
+  document.body.classList.add("page-ready");
+
+});
